@@ -19,18 +19,22 @@ namespace WebApplication01.Controllers
             LastName = "Smith",
             Birthday = DateTime.Now.AddYears(-30)
         };
-        
+        private static Student _student = new Student
+        {
+            StudentID =3            
+        };
+
         public IActionResult Index()
         {
-            return View(new PersonViewModel { Person = _person });
+            return View(new PersonViewModel { Person = _person, Students = _student, PersonViewModelID=5 });
         }
 
         [HttpPost, ValidateAntiForgeryToken]
         // See variations above of what I have tried.
         //[Bind("Id", "FirstName", "LastName", "Birthday", Prefix = "Person")]
-        public IActionResult Index(int id, [Bind("Id", "FirstName", "LastName", "Birthday", Prefix = "Person")] Person model)
+        public IActionResult Index(int id, [Bind("Id", "FirstName", "LastName", "Birthday", Prefix = "Person")] Person personmodel,[Bind("StudentID",Prefix="Students")] Student studentmodel,[Bind("Person,Students,PersonViewModelID")] PersonViewModel bigmodel)
         {
-             
+
             //if (id != model.Person.Id)
             //    return NotFound();
 
@@ -40,7 +44,7 @@ namespace WebApplication01.Controllers
             //    return RedirectToAction("Index");
             //}
 
-            return View(model);
+           return     RedirectToAction("Index");
 
         }
     }

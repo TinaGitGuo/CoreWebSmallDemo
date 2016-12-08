@@ -8,7 +8,13 @@ namespace WebApplication01.Models
 {
     public class PersonViewModel
     {
+        public int PersonViewModelID { get; set; }
+        public Student Students { get; set; }  
         public Person Person { get; set; } = new Person();
+    }
+    public class Student
+    {
+        public int StudentID { get; set; }
     }
     public class Person
     {

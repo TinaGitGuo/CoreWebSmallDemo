@@ -4,6 +4,8 @@
 <form asp-controller="Person" asp-action="Index"  asp-route-id="@Model.Person.Id" >
     <div class="form-horizontal">
         <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="Students.StudentID" />
+        <input asp-for="PersonViewModelID" />
         <input type="hidden" asp-for="Person.Id" />
         <div class="form-group">
             <label asp-for="Person.FirstName" class="col-md-2 control-label"></label>
