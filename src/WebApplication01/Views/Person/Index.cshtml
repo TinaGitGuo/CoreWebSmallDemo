@@ -1,0 +1,32 @@
+﻿@{
+    @model WebApplication01.Models.PersonViewModel
+}
+<form asp-controller="Person" asp-action="Index"  asp-route-id="@Model.Person.Id" >
+    <div class="form-horizontal">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="Person.Id" />
+        <div class="form-group">
+            <label asp-for="Person.FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Person.FirstName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Person.LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Person.LastName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Person.Birthday" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Person.Birthday" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
