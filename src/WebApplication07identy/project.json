@@ -1,0 +1,51 @@
+{
+  "userSecretsId": "aspnet-WebApplication07identy-227d7916-d698-4c80-8ea3-c3894b28d52a",
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {"version": "1.1.0-preview1-001100-00","type": "platform"},
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": "1.1.0-preview4-final",
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "tools": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
+        "version": "1.1.0-preview4-final",
+        "imports": [
+          "portable-net45+win8"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp1.1": {
+        "imports": [
+          "dotnet5.6",
+          "portable-net45+win8"
+        ]
+      }
+    },
+    "buildOptions": {
+      "emitEntryPoint": true,
+      "preserveCompilationContext": true
+    },
+    "runtimeOptions": {
+      "configProperties": {
+        "System.GC.Server": true
+      }
+    },
+    "publishOptions": {
+      "include": [
+        "wwwroot",
+        "**/*.cshtml",
+        "appsettings.json",
+        "web.config"
+      ]
+    },
+    "scripts": {
+      "prepublish": [ "bower install", "dotnet bundle" ],
+      "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    },
+    "Microsoft.EntityFrameworkCore": "1.1.0"
+  }
+}
